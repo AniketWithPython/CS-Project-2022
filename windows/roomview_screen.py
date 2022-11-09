@@ -34,6 +34,7 @@ class App:
         sheet=tksheet.Sheet(root)
         sheet.pack(fill="both",expand=False)
         #replace sample with actual data
+        sheet.headers(["Room ID","Student ID","Capacity","Status"])
         sheet.set_sheet_data(yeardata)
 
 

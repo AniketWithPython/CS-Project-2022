@@ -9,7 +9,7 @@ def setup():
     while True:
         try:
             credentials()
-            sql=mc.connect(user='root',passwd=pwd,host="localhost")
+            sql=mc.connect(user='root',passwd=pwd,host="localhost",port='3308') #change port if using different system
             cur=sql.cursor()
             break
         except:
