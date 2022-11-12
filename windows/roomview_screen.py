@@ -4,13 +4,14 @@ import tkinter as tk
 import tkinter.font as tkFont
 import tksheet
 import datetime
+import database_controller
 
 yeardata=[]
 class App:
     def __init__(self, root):
-        global data
+        global data,sheet
         #setting title
-        root.title("Room")
+        
         #setting window size
         width=631
         height=389
@@ -34,15 +35,17 @@ class App:
         sheet=tksheet.Sheet(root)
         sheet.pack(fill="both",expand=False)
         #replace sample with actual data
-        sheet.headers(["Room ID","Student ID","Capacity","Status"])
-        sheet.set_sheet_data(yeardata)
+        sheet.headers(["Room ID","Capacity","Year"])
+        
 
 
     def GButton_856_command(self):
         root.destroy()
 
-def roomview_screen():
+def roomview_screen(year):
     global root
     root = tk.Toplevel()
     app = App(root)
+    root.title(f"Year {year}")
+    sheet.set_sheet_data(database_controller.viewroom(year))
     root.mainloop()

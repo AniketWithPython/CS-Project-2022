@@ -72,8 +72,7 @@ class App:
 
     
 def show(click):
-    windows.yeardata=database_controller.viewroom(click)
-    windows.roomview_screen()
+    windows.roomview_screen(click)
 
 
 def yearselect_screen():

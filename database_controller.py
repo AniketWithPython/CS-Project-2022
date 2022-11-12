@@ -39,10 +39,6 @@ def viewcanteen():
     except:pass
     return data
 
-def messfeeview():
-    cur.execute("select * from student")
-    return cur.fetchall()
-
 def viewroom(year):
-    cur.execute(f"select * from student where yr={year}")
+    cur.execute(f"select * from room where yr={year}")
     return cur.fetchall()
